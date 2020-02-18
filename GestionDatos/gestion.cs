@@ -29,7 +29,22 @@ namespace GestionDatos
 
         public int CantAlumnosCiclo(string idCiclo)
         {
-            return datos.AlumnosDeCiclo(idCiclo);
+            return datos.CantAlumnosCiclo(idCiclo);
+        }
+
+        public int CantAlumnosAsignados(string idCiclo)
+        {
+            return datos.CantAlumnosAsignadosFCT(idCiclo);
+        }
+
+        public List<Alumnos> AlumnosCiclo(string idCiclo)
+        {
+            return datos.AlumnosCiclo(idCiclo);
+        }
+
+        public List<Empresas> EmpresasCiclo(string idCiclo)
+        {
+            return datos.EmpresasCiclo(idCiclo);
         }
 
 

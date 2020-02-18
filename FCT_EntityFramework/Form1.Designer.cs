@@ -36,6 +36,15 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txtAlumnosCiclo = new System.Windows.Forms.TextBox();
             this.txtAlumnosAsignados = new System.Windows.Forms.TextBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.dgvAlumnosAsignados = new System.Windows.Forms.DataGridView();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.dgvEmpresasCiclo = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosAsignados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresasCiclo)).BeginInit();
             this.SuspendLayout();
             // 
             // cboCiclos
@@ -120,11 +129,80 @@
             this.txtAlumnosAsignados.Size = new System.Drawing.Size(50, 20);
             this.txtAlumnosAsignados.TabIndex = 7;
             // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(36, 151);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(152, 19);
+            this.materialLabel5.TabIndex = 8;
+            this.materialLabel5.Text = "Alumnos/as del ciclo";
+            // 
+            // dgvAlumnos
+            // 
+            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumnos.Location = new System.Drawing.Point(40, 187);
+            this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.Size = new System.Drawing.Size(435, 246);
+            this.dgvAlumnos.TabIndex = 9;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(36, 484);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(326, 19);
+            this.materialLabel6.TabIndex = 10;
+            this.materialLabel6.Text = "Alumnos/as del ciclo con empresa ya asignada";
+            // 
+            // dgvAlumnosAsignados
+            // 
+            this.dgvAlumnosAsignados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumnosAsignados.Location = new System.Drawing.Point(40, 507);
+            this.dgvAlumnosAsignados.Name = "dgvAlumnosAsignados";
+            this.dgvAlumnosAsignados.Size = new System.Drawing.Size(435, 150);
+            this.dgvAlumnosAsignados.TabIndex = 11;
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(644, 151);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(358, 19);
+            this.materialLabel7.TabIndex = 12;
+            this.materialLabel7.Text = "Empresas para el ciclo (ordenadas alfabéticamente)";
+            // 
+            // dgvEmpresasCiclo
+            // 
+            this.dgvEmpresasCiclo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpresasCiclo.Location = new System.Drawing.Point(648, 187);
+            this.dgvEmpresasCiclo.Name = "dgvEmpresasCiclo";
+            this.dgvEmpresasCiclo.Size = new System.Drawing.Size(543, 316);
+            this.dgvEmpresasCiclo.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 682);
+            this.Controls.Add(this.dgvEmpresasCiclo);
+            this.Controls.Add(this.materialLabel7);
+            this.Controls.Add(this.dgvAlumnosAsignados);
+            this.Controls.Add(this.materialLabel6);
+            this.Controls.Add(this.dgvAlumnos);
+            this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.txtAlumnosAsignados);
             this.Controls.Add(this.txtAlumnosCiclo);
             this.Controls.Add(this.materialLabel4);
@@ -136,6 +214,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosAsignados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresasCiclo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +232,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.TextBox txtAlumnosCiclo;
         private System.Windows.Forms.TextBox txtAlumnosAsignados;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private System.Windows.Forms.DataGridView dgvAlumnos;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private System.Windows.Forms.DataGridView dgvAlumnosAsignados;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private System.Windows.Forms.DataGridView dgvEmpresasCiclo;
     }
 }
 

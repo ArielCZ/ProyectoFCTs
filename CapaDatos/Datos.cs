@@ -28,7 +28,7 @@ namespace CapaDatos
             return bdFCTsEntities.Ciclos.ToList();
         }
 
-        public int AlumnosDeCiclo(string idCiclo)
+        public int CantAlumnosCiclo(string idCiclo)
         {
             Ciclos cicloBuscar = new Ciclos(idCiclo);
             cicloBuscar = bdFCTsEntities.Ciclos.Find(idCiclo);
@@ -37,6 +37,31 @@ namespace CapaDatos
                 return 0;
             }
             return cicloBuscar.Alumnos.Count();
+        }
+
+        public int CantAlumnosAsignadosFCT(string idCiclo)
+        {
+            Ciclos cicloBuscar = new Ciclos(idCiclo);
+            cicloBuscar = bdFCTsEntities.Ciclos.Find(idCiclo);
+            if (cicloBuscar == null) return 0;
+            List<Alumnos> alumnosCiclo = cicloBuscar.Alumnos.ToList();
+            return alumnosCiclo.Where(a => a.FCTs != null).ToList().Count();
+        }
+
+        public List<Alumnos> AlumnosCiclo(string idCiclo)
+        {
+            Ciclos cicloBuscar = new Ciclos(idCiclo);
+            cicloBuscar = bdFCTsEntities.Ciclos.Find(idCiclo);
+            if (cicloBuscar == null) return null;
+            return cicloBuscar.Alumnos.OrderByDescending(a => a.Aprobado).ThenBy(a=>a.Nombre).ToList(); ;
+        }
+
+        public List<Empresas> EmpresasCiclo(string idCiclo)
+        {
+            Ciclos cicloBuscar = new Ciclos(idCiclo);
+            cicloBuscar = bdFCTsEntities.Ciclos.Find(idCiclo);
+            if (cicloBuscar == null) return null;
+            return cicloBuscar.OfertasFCT.Select(o => o.Empresas).ToList();
         }
 
 

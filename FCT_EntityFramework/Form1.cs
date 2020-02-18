@@ -16,6 +16,7 @@ namespace FCT_EntityFramework
     {
         private List<Alumnos> Alumnos;
         private List<Ciclos> Ciclos;
+        private List<Empresas> EmpresasCiclo;
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +35,15 @@ namespace FCT_EntityFramework
             txtNombreCiclo.Text = cboCiclos.Text;
             Ciclos selectedCiclo = (Ciclos)cboCiclos.SelectedItem;
             txtAlumnosCiclo.Text = Program.gestion.CantAlumnosCiclo(selectedCiclo.Id).ToString();
+            txtAlumnosAsignados.Text = Program.gestion.CantAlumnosAsignados(selectedCiclo.Id).ToString();
+
+            Alumnos = Program.gestion.AlumnosCiclo(selectedCiclo.Id);
+            EmpresasCiclo = Program.gestion.EmpresasCiclo(selectedCiclo.Id);
+
+
+            dgvAlumnos.DataSource = Alumnos.Select(a => new { a.Nombre, a.Telefono, a.Aprobado }).ToList();
+            dgvAlumnosAsignados.DataSource = Alumnos.Where(a => a.FCTs != null).ToList();
+            dgvEmpresasCiclo.DataSource = EmpresasCiclo.ToList();
         }
 
     }
