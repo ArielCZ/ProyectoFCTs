@@ -141,12 +141,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gestion.cs" />
+    <Compile Include="Gestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{76EB3697-87FB-468C-9ADC-0FB5074DF160}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{CE1511F2-E3B2-4621-B151-7EC682727BEB}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

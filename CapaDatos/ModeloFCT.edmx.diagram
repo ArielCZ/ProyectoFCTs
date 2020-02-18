@@ -7,10 +7,10 @@
       <Diagram DiagramId="ceb4e7806b4c4272b50b2f8f3020b3a4" Name="Diagram1">
         <EntityTypeShape EntityType="BdFCTsModel.Alumnos" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BdFCTsModel.Ciclos" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdFCTsModel.Empresas" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdFCTsModel.FCTs" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdFCTsModel.OfertasFCT" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdFCTsModel.Profes" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdFCTsModel.Empresas" Width="1.5" PointX="5.375" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdFCTsModel.FCTs" Width="1.5" PointX="7.625" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdFCTsModel.OfertasFCT" Width="1.5" PointX="7.625" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdFCTsModel.Profes" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <AssociationConnector Association="BdFCTsModel.FK_Alumnos_Ciclos" ManuallyRouted="false" />
         <AssociationConnector Association="BdFCTsModel.FK_FCTs_Alumnos" ManuallyRouted="false" />
         <AssociationConnector Association="BdFCTsModel.FK_OfertasFCT_Ciclos" ManuallyRouted="false" />

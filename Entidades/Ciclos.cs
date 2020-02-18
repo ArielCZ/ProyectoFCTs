@@ -12,7 +12,7 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Ciclos
+    public partial class Ciclos : IEquatable<Ciclos>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Ciclos()
@@ -20,7 +20,32 @@ namespace Entidades
             this.Alumnos = new HashSet<Alumnos>();
             this.OfertasFCT = new HashSet<OfertasFCT>();
         }
-    
+
+        public Ciclos(string id)
+        {
+            Id = id;
+        }
+
+        public Ciclos(string id, string nombre) : this(id)
+        {
+            Nombre = nombre;
+        }
+
+        public Ciclos(string id, string nombre, string tipo) : this(id, nombre)
+        {
+            Tipo = tipo;
+        }
+
+        public Ciclos(string id, string nombre, string tipo, ICollection<Alumnos> alumnos) : this(id, nombre, tipo)
+        {
+            Alumnos = alumnos;
+        }
+
+        public Ciclos(string id, string nombre, string tipo, ICollection<Alumnos> alumnos, ICollection<OfertasFCT> ofertasFCT) : this(id, nombre, tipo, alumnos)
+        {
+            OfertasFCT = ofertasFCT;
+        }
+
         public string Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
@@ -29,5 +54,16 @@ namespace Entidades
         public virtual ICollection<Alumnos> Alumnos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OfertasFCT> OfertasFCT { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Ciclos);
+        }
+
+        public bool Equals(Ciclos other)
+        {
+            return other != null &&
+                   Id.ToUpper() == other.Id.ToUpper();
+        }
     }
 }
