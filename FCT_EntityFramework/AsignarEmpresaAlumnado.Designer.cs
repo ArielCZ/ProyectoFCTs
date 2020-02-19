@@ -1,6 +1,6 @@
 ﻿namespace FCT_EntityFramework
 {
-    partial class EmpresasForm
+    partial class AsignarEmpresaAlumnado
     {
         /// <summary>
         /// Required designer variable.

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace FCT_EntityFramework
 {
-    public partial class EmpresasForm : Form
+    public partial class AsignarEmpresaAlumnado : Form
     {
         
-        public EmpresasForm()
+        public AsignarEmpresaAlumnado()
         {
             InitializeComponent();
         }
@@ -23,13 +23,14 @@ namespace FCT_EntityFramework
         {
             cboCiclos.Items.AddRange(Program.gestion.Ciclos.ToArray());
             cboCiclos.DisplayMember = "Id";
-            cboCiclos.SelectedIndex = 0;
 
         }
 
         private void CboCiclos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cboAlumnosCiclo.Items.Clear();
             Ciclos selected = (Ciclos)cboCiclos.SelectedItem;
+
             Program.gestion.AlumnosCiclo(selected.Id);
             cboAlumnosCiclo.Items.AddRange(Program.gestion.Alumnos.ToArray());
             cboAlumnosCiclo.DisplayMember = "Nombre";

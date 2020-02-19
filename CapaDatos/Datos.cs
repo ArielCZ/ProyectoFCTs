@@ -71,6 +71,7 @@ namespace CapaDatos
             return bdFCTsEntities.Profes.ToList();
         }
 
+
         public string AsignarEmpresa(Ciclos ciclo, Alumnos alum, Empresas emp, Profes profe, string tutorEmpresa)
         {
             Ciclos cicloBuscar = bdFCTsEntities.Ciclos.Find(ciclo.Id);
@@ -98,6 +99,23 @@ namespace CapaDatos
             bdFCTsEntities.FCTs.Add(nuevaFct);
             bdFCTsEntities.SaveChanges();
             return "Se ha añadido correctamente";
+        }
+
+
+        public string retirarEmpresa(Alumnos alum)
+        {
+            Alumnos alumno = bdFCTsEntities.Alumnos.Find(alum.NMatricula);
+            if (alumno == null) return $"El alumno/a {alum.Nombre} no existe";
+            if (!alumno.Aprobado) return $"El alumno/a {alumno.Nombre} no puede tener asignada empresa porque no ha aprobado el curso";
+            if (alumno.FCTs == null) return $"El alumno/a {alumno.Nombre} no tiene asignada empresa";
+            return $"El alumno/a {alumno.Nombre} tiene asignada la empresa {alumno.FCTs.Empresas.Nombre}, ¿Deseas eliminar la asignación?";
+        }
+
+        public string eliminarEmpresa(Alumnos alum)
+        {
+            bdFCTsEntities.FCTs.Remove(alum.FCTs);
+            bdFCTsEntities.SaveChanges();
+            return "Eliminado correctamente";
         }
 
     }

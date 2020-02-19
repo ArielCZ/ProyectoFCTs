@@ -61,5 +61,15 @@ namespace GestionDatos
         {
            return  datos.AsignarEmpresa(ciclo, alum, empresa, profe, tutorEmpresa);
         }
+
+        public string RetirarEmpresa(Alumnos alum)
+        {
+            return datos.retirarEmpresa(alum);
+        }
+
+        public string EliminarEmpresa(Alumnos alum)
+        {
+            return datos.eliminarEmpresa(alum);
+        }
     }
 }

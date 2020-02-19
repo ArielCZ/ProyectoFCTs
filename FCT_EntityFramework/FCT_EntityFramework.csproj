@@ -147,11 +147,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpresasForm.cs">
+    <Compile Include="AsignarEmpresaAlumnado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmpresasForm.Designer.cs">
-      <DependentUpon>EmpresasForm.cs</DependentUpon>
+    <Compile Include="AsignarEmpresaAlumnado.Designer.cs">
+      <DependentUpon>AsignarEmpresaAlumnado.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultasCicloForm.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EmpresasForm.resx">
-      <DependentUpon>EmpresasForm.cs</DependentUpon>
+    <Compile Include="RetirarEmpresaAlumnado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetirarEmpresaAlumnado.Designer.cs">
+      <DependentUpon>RetirarEmpresaAlumnado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AsignarEmpresaAlumnado.resx">
+      <DependentUpon>AsignarEmpresaAlumnado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultasCicloForm.resx">
       <DependentUpon>ConsultasCicloForm.cs</DependentUpon>
@@ -185,6 +191,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RetirarEmpresaAlumnado.resx">
+      <DependentUpon>RetirarEmpresaAlumnado.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

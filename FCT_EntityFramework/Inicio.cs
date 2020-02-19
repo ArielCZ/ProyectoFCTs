@@ -25,8 +25,14 @@ namespace FCT_EntityFramework
 
         private void BtnAsignarEmpresa_Click(object sender, EventArgs e)
         {
-            EmpresasForm frmEmpresa = new EmpresasForm();
+            AsignarEmpresaAlumnado frmEmpresa = new AsignarEmpresaAlumnado();
             frmEmpresa.Show();
+        }
+
+        private void BtnRetirarEmpresa_Click(object sender, EventArgs e)
+        {
+            RetirarEmpresaAlumnado frmretirarEmpresaAlumnado = new RetirarEmpresaAlumnado();
+            frmretirarEmpresaAlumnado.Show();
         }
     }
 }

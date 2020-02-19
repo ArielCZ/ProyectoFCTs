@@ -61,6 +61,7 @@
             this.btnRetirarEmpresa.TabIndex = 2;
             this.btnRetirarEmpresa.Text = "Retirar la empresa a un alumno/a";
             this.btnRetirarEmpresa.UseVisualStyleBackColor = true;
+            this.btnRetirarEmpresa.Click += new System.EventHandler(this.BtnRetirarEmpresa_Click);
             // 
             // Inicio
             // 
