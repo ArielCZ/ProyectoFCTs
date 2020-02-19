@@ -11,6 +11,10 @@ namespace GestionDatos
     public class Gestion
     {
         Datos datos;
+        public List<Alumnos> Alumnos;
+        public List<Ciclos> Ciclos;
+        public List<Empresas> EmpresasCiclo;
+        public List<Profes> Profes;
 
         public Gestion(out string msg)
         {
@@ -20,11 +24,12 @@ namespace GestionDatos
             {
                 msg = error;
             }
+            GetCiclos();
         }
 
-        public List<Ciclos> GetCiclos()
+        public void GetCiclos()
         {
-            return datos.Ciclos();
+            Ciclos = datos.Ciclos();
         }
 
         public int CantAlumnosCiclo(string idCiclo)
@@ -37,16 +42,24 @@ namespace GestionDatos
             return datos.CantAlumnosAsignadosFCT(idCiclo);
         }
 
-        public List<Alumnos> AlumnosCiclo(string idCiclo)
+        public void AlumnosCiclo(string idCiclo)
         {
-            return datos.AlumnosCiclo(idCiclo);
+            Alumnos =  datos.AlumnosCiclo(idCiclo);
         }
 
-        public List<Empresas> EmpresasCiclo(string idCiclo)
+        public void EmpresasdeCiclo(string idCiclo)
         {
-            return datos.EmpresasCiclo(idCiclo);
+            EmpresasCiclo = datos.EmpresasCiclo(idCiclo);
         }
 
+        public void TodosProfes()
+        {
+            Profes = datos.Profes();
+        }
 
+        public string AsignarEmpresa(Ciclos ciclo, Alumnos alum, Empresas empresa, Profes profe, string tutorEmpresa)
+        {
+           return  datos.AsignarEmpresa(ciclo, alum, empresa, profe, tutorEmpresa);
+        }
     }
 }

@@ -14,6 +14,25 @@ namespace Entidades
     
     public partial class FCTs
     {
+        public FCTs()
+        {
+
+        }
+        public FCTs(int nMatricula, int idEmpresa, string tutorInsti, string tutorEmpresa)
+        {
+            NMatricula = nMatricula;
+            IdEmpresa = idEmpresa;
+            TutorInsti = tutorInsti;
+            TutorEmpresa = tutorEmpresa;
+        }
+
+        public FCTs(int nMatricula, int idEmpresa, string tutorInsti, string tutorEmpresa, Alumnos alumnos, Empresas empresas, Profes profes) : this(nMatricula, idEmpresa, tutorInsti, tutorEmpresa)
+        {
+            Alumnos = alumnos;
+            Empresas = empresas;
+            Profes = profes;
+        }
+
         public int NMatricula { get; set; }
         public int IdEmpresa { get; set; }
         public string TutorInsti { get; set; }

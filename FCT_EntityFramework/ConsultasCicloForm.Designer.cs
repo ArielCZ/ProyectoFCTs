@@ -1,6 +1,6 @@
 ﻿namespace FCT_EntityFramework
 {
-    partial class Form1
+    partial class ConsultasCicloForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
