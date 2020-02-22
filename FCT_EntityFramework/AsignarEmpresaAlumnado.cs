@@ -44,8 +44,35 @@ namespace FCT_EntityFramework
 
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Program.gestion.AsignarEmpresa((Ciclos) cboCiclos.SelectedItem, (Alumnos)cboAlumnosCiclo.SelectedItem, (Empresas)cboEmpresasCiclo.SelectedItem
-                ,(Profes)cboTutor.SelectedItem, txtTutorEmpresa.Text));
+            var cicloSelected = (Ciclos)cboCiclos.SelectedItem;
+            var alumnoSelected = (Alumnos)cboAlumnosCiclo.SelectedItem;
+            var empresaSelected = (Empresas)cboEmpresasCiclo.SelectedItem;
+            var profeSelected = (Profes)cboTutor.SelectedItem;
+            if (cicloSelected == null)
+            {
+                MessageBox.Show("Elige un ciclo válido.");
+            }
+            else if (alumnoSelected == null)
+            {
+                MessageBox.Show("Elige un alumno válido.");
+            }
+            else if (empresaSelected == null)
+            {
+                MessageBox.Show("Elige una empresa válida.");
+            }
+            else if (profeSelected == null)
+            {
+                MessageBox.Show("Elige un profesor válido");
+            }
+            else if (txtTutorEmpresa.Text == "") {
+                MessageBox.Show("Elige un tutor de empresa válido");
+            }
+            else
+            {
+                MessageBox.Show(Program.gestion.AsignarEmpresa(cicloSelected, alumnoSelected, empresaSelected
+                , profeSelected, txtTutorEmpresa.Text));
+            }
+            
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)

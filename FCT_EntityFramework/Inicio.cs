@@ -34,5 +34,10 @@ namespace FCT_EntityFramework
             RetirarEmpresaAlumnado frmretirarEmpresaAlumnado = new RetirarEmpresaAlumnado();
             frmretirarEmpresaAlumnado.Show();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

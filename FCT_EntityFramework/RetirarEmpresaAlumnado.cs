@@ -37,23 +37,38 @@ namespace FCT_EntityFramework
 
         private void BtnRetirarEmpresa_Click(object sender, EventArgs e)
         {
-            string result = Program.gestion.RetirarEmpresa((Alumnos)cboAlumnosCiclo.SelectedItem);
-            if (result.Contains("eliminar"))
+            var cicloSelected = (Ciclos)cboCiclos.SelectedItem;
+            var alumnoSelected = (Alumnos)cboAlumnosCiclo.SelectedItem;
+            if (cicloSelected == null)
             {
-               DialogResult resultDialog = MessageBox.Show(result, "Aviso", MessageBoxButtons.YesNo);
-                if (resultDialog == DialogResult.Yes)
-                {
-                    MessageBox.Show(Program.gestion.EliminarEmpresa(selectedAlumn));
-                }
-            } else
-            {
-                MessageBox.Show(result);
+                MessageBox.Show("Elige un ciclo válido");
             }
+            else if(alumnoSelected == null)
+            {
+                MessageBox.Show("Elige un alumno válido");
+            }
+            else
+            {
+                string result = Program.gestion.RetirarEmpresa((Alumnos)cboAlumnosCiclo.SelectedItem);
+                if (result.Contains("eliminar"))
+                {
+                    DialogResult resultDialog = MessageBox.Show(result, "Aviso", MessageBoxButtons.YesNo);
+                    if (resultDialog == DialogResult.Yes)
+                    {
+                        MessageBox.Show(Program.gestion.EliminarEmpresa(alumnoSelected));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(result);
+                }
+            }
+            
         }
 
         private void CboAlumnosCiclo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedAlumn = (Alumnos)cboAlumnosCiclo.SelectedItem;
+           // selectedAlumn = (Alumnos)cboAlumnosCiclo.SelectedItem;
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)

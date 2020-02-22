@@ -35,9 +35,10 @@
             // 
             // btnConsultaCiclo
             // 
-            this.btnConsultaCiclo.Location = new System.Drawing.Point(231, 139);
+            this.btnConsultaCiclo.Location = new System.Drawing.Point(346, 214);
+            this.btnConsultaCiclo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultaCiclo.Name = "btnConsultaCiclo";
-            this.btnConsultaCiclo.Size = new System.Drawing.Size(312, 28);
+            this.btnConsultaCiclo.Size = new System.Drawing.Size(468, 43);
             this.btnConsultaCiclo.TabIndex = 0;
             this.btnConsultaCiclo.Text = "Consultas por ciclo";
             this.btnConsultaCiclo.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // btnAsignarEmpresa
             // 
-            this.btnAsignarEmpresa.Location = new System.Drawing.Point(231, 199);
+            this.btnAsignarEmpresa.Location = new System.Drawing.Point(346, 306);
+            this.btnAsignarEmpresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAsignarEmpresa.Name = "btnAsignarEmpresa";
-            this.btnAsignarEmpresa.Size = new System.Drawing.Size(312, 28);
+            this.btnAsignarEmpresa.Size = new System.Drawing.Size(468, 43);
             this.btnAsignarEmpresa.TabIndex = 1;
             this.btnAsignarEmpresa.Text = "Asignar empresa a alumnado";
             this.btnAsignarEmpresa.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnRetirarEmpresa
             // 
-            this.btnRetirarEmpresa.Location = new System.Drawing.Point(231, 263);
+            this.btnRetirarEmpresa.Location = new System.Drawing.Point(346, 405);
+            this.btnRetirarEmpresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRetirarEmpresa.Name = "btnRetirarEmpresa";
-            this.btnRetirarEmpresa.Size = new System.Drawing.Size(312, 28);
+            this.btnRetirarEmpresa.Size = new System.Drawing.Size(468, 43);
             this.btnRetirarEmpresa.TabIndex = 2;
             this.btnRetirarEmpresa.Text = "Retirar la empresa a un alumno/a";
             this.btnRetirarEmpresa.UseVisualStyleBackColor = true;
@@ -65,14 +68,16 @@
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.btnRetirarEmpresa);
             this.Controls.Add(this.btnAsignarEmpresa);
             this.Controls.Add(this.btnConsultaCiclo);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.ResumeLayout(false);
 
         }
